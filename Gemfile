@@ -49,6 +49,12 @@ gem 'omniauth-rails_csrf_protection'
 # 環境変数
 gem 'dotenv-rails'
 
+# メッセージAPI
+gem 'line-bot-api'
+
+# ページネーション
+gem 'kaminari'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

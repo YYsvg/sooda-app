@@ -3,4 +3,11 @@ Rails.application.routes.draw do
     omniauth_callbacks: "omniauth_callbacks"
   }
   root 'homes#index'
+
+resources :incomes
+resources :outcomes
+resources :income_categories
+resources :outcome_categories
+resources :wants
+
 end
