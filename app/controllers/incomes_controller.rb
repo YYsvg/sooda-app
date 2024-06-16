@@ -1,14 +1,15 @@
 class IncomesController < ApplicationController
-  before_action :set_income, only:[ :show, :edit, :update, :destroy]
+  before_action :set_income, only:[ :edit, :update, :destroy]
+  PER = 15
 
   def index
     @incomes = current_user.incomes.all
-    @income_categories = IncomeCategory.all
+    @income_categories = IncomeCategory.page(params[:page]).per(PER)
   end
 
-  def show
-    @user = @income.user
-  end
+  # def show
+    # @user = @income.user
+  # end
 
   def new
     @income = current_user.income.new
@@ -21,8 +22,7 @@ class IncomesController < ApplicationController
   def create
     @income = current_user.incomes.new(income_params)
     if @income.save
-      # showページへリダイレクト
-      redirect_to @income, notice: "登録完了！"
+      redirect_to homes_path, notice: "登録完了！"
     else
       render "new"
     end
@@ -31,7 +31,7 @@ class IncomesController < ApplicationController
   def update
     if @income.update(income_params)
       # indexページへリダイレクト
-      redirect_to incomes_path, notice: "アップデート成功！"
+      redirect_to incomes_path, notice: "修正しました"
     else
       render 'edit'
     end
@@ -41,7 +41,7 @@ class IncomesController < ApplicationController
     if @income.destroy
       redirect_to incomes_path, notice:"削除しました"
     else
-      redirect_to incomes_path, alert: "削除に失敗しました: #{@income.errors.full_messages.join(,)}"
+      redirect_to incomes_path, alert: "削除に失敗しました: #{@income.errors.full_messages.join(',')}"
     end
   end
 

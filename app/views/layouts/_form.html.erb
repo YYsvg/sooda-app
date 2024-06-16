@@ -1,0 +1,30 @@
+labelのcss調整する
+
+<%= form_with model: @income, local: true do |f| %>
+  <div>
+    <% @income_categories.each do |income_category| %>
+      <div>
+        <%= f.radio_button(:income_category_id, "#{income_category.id}") %>
+        <%= f.label :income_category_id, "#{income_category.name}", {value: income_category.id.to_i, style: "display: inline-block;"} %>
+      </div>
+    <% end %>
+  </div><br>
+
+  <div>
+    <%= f.label :price, "金額　" %>
+    <%= f.number_field :price %>
+  </div>
+  <div>
+    <%= f.label :memo, "メモ　" %>
+    <%= f.text_field :memo %>
+  </div>
+
+  <div>
+    <%= f.label :image, "写真もどうぞ　" %>
+    <%= f.file_field :image %>
+  </div><br><br>
+
+  <div>
+    <%= f.submit "入力", class:"submit-color" %>
+  </div>
+<% end %>

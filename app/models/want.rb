@@ -3,4 +3,6 @@ class Want < ApplicationRecord
 
   validates :memo,  presence: true
   validates :price, presence: true
+
+  mount_uploader :image, ImageUploader
 end

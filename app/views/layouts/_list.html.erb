@@ -1,0 +1,27 @@
+<%= form_with model: @outcome, local: true do |f| %>
+  <div>
+    <% @outcome_categories.each do |outcome_category| %>
+    <div>
+      <%= f.radio_button( :outcome_category_id, "#{outcome_category.id}") %>
+      <%= f.label :outcome_category_id, "#{outcome_category.name}", {value: outcome_category.id.to_i, style: "display: inline-block;"} %>
+    </div>
+    <% end %>
+  </div><br>
+
+  <div>
+    <%= f.label :price, "金額　" %>
+    <%= f.number_field :price %>
+  </div><br>
+  <div>
+    <%= f.label :memo, "メモ　" %>
+    <%= f.text_field :memo %>
+  </div><br>
+  <div>
+    <%= f.label :image, "写真もどうぞ　" %>
+    <%= f.file_field :image %>
+  </div><br>
+  <div>
+    <%= f.submit "入力", class: "submit-color income" %>
+  </div><br>
+<% end %>
+

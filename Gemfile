@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # devise導入
 gem 'devise'
 
-# 
+# 見た目を整える
 gem 'bootstrap', '~> 4.6.0'
 gem 'jquery-rails'
 
@@ -55,6 +55,18 @@ gem 'line-bot-api'
 # ページネーション
 gem 'kaminari'
 
+# fontawsome
+gem "font-awesome-sass"
+
+# 画像アップロード機能
+gem 'carrierwave'
+gem 'mini_magick'
+
+# カレンダー機能
+gem 'simple_calendar', '~> 2.0'
+
+# 日本語に対応する
+gem 'rails-i18n', '~> 5.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -70,6 +82,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # seedデータにそれらしい値を生成する
+  gem 'faker'
 end
 
 group :test do

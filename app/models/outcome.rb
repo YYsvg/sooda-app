@@ -4,4 +4,10 @@ class Outcome < ApplicationRecord
 
   validates :memo,  presence: true
   validates :price, presence: true
+
+  mount_uploader :image, ImageUploader
+
+  def start_time
+    created_at
+  end
 end

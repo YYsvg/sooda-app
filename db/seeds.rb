@@ -1,22 +1,11 @@
-# Userモデル
+IncomeCategory.create(name: "おこづかい")
+IncomeCategory.create(name: "おてつだい")
+IncomeCategory.create(name: "お年玉")
 
-User.create!(
-  email: 'test@test.com',
-  name: 'テスト太郎',
-  password: 'password123'
-)
 
-# IncomeCategoryモデル
-4.times do |n|
-  IncomeCategory.create!(
-    name: "テスト#{n}"
-  )
-end
-
-#  OutcomeCategoryモデル
-4.times do |n|
-  OutcomeCategory.create!(
-    name: "テスト#{n}"
-  )
-end
-
+OutcomeCategory.create(name: "食費")
+OutcomeCategory.create(name: "文房具")
+OutcomeCategory.create(name: "書籍")
+OutcomeCategory.create(name: "交際費")
+OutcomeCategory.create(name: "おでかけ")
+OutcomeCategory.create(name: "衣服")

@@ -1,0 +1,2 @@
+class OutcomeCategoriesController < ApplicationController
+end

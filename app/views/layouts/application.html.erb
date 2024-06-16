@@ -11,10 +11,12 @@
 
   <body>
     <main>
-    <% if flash.notice %>
-      <p><%= flash.notice %></p>
-    <% end %>
+      <%= render 'layouts/header' %>
+      <% if flash.notice %>
+        <p><%= flash.notice %></p>
+      <% end %>
       <%= yield %>
+      <%= render 'layouts/footer' %>
     </main>
   </body>
 </html>

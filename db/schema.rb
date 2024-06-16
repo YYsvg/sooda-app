@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_06_13_113655) do
+ActiveRecord::Schema.define(version: 2024_06_14_014941) do
 
   create_table "income_categories", force: :cascade do |t|
     t.string "name", null: false
@@ -25,6 +25,10 @@ ActiveRecord::Schema.define(version: 2024_06_13_113655) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "income_category_id"
+    t.integer "user_id"
+    t.index ["income_category_id"], name: "index_incomes_on_income_category_id"
+    t.index ["user_id"], name: "index_incomes_on_user_id"
   end
 
   create_table "outcome_categories", force: :cascade do |t|
@@ -40,6 +44,10 @@ ActiveRecord::Schema.define(version: 2024_06_13_113655) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "outcome_category_id"
+    t.integer "user_id"
+    t.index ["outcome_category_id"], name: "index_outcomes_on_outcome_category_id"
+    t.index ["user_id"], name: "index_outcomes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -64,6 +72,8 @@ ActiveRecord::Schema.define(version: 2024_06_13_113655) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_wants_on_user_id"
   end
 
 end

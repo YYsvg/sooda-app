@@ -1,0 +1,18 @@
+<footer>
+  <% if current_user.present? %>
+    <div>
+      <ul class = "link-list">
+        <li><%= link_to "支出カレンダー", mypage_calendar_users_path, class: "link-color" %></li>
+        <li><%= link_to "レポート", mypage_users_path, class: "link-color" %></li>
+        <li><%= link_to "やりたいこと", :wants, class: "link-color" %></li>
+      </ul>
+    </div>
+    <div class="col-sm-9 setting">
+        <p>設定リンクへ・カテゴリと名前の編集</p>
+        <%= link_to edit_users_path do %>
+          <h3><i class="fa-solid fa-bars" style="color: #212529;"></i></h3>
+          <h3><i class="fa-regular fa-face-smile" style="color: #212529;"></i></h3>
+        <% end %>
+    </div>
+  <% end %>
+</footer>
