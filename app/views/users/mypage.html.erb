@@ -1,2 +1,31 @@
-<h1>Users#mypage</h1>
-<p>Find me in app/views/users/mypage.html.erb</p>
+<div class="container">
+  <div class="mycard mx-auto"  style="width: 1000px;">
+    <div class="card-body col-sm-9">
+      <ul class="tab-list list-unstyled">
+        <li class="tab tab-active">
+          <%= "月別（支出）" %>
+        </li>
+        <li class="tab">
+          <%= "月別（収入）" %>
+        </li>
+        <li class="tab">
+          <%= "年間レポート" %>
+        </li>
+      </ul>
+      <h4 class="card-title"></h4><br>
+      <h5 class="card-text">
+
+      <div>
+        <div class="tabbox box-show">
+          <%= render 'month_outcome' %>
+        </div>
+        <div class="tabbox">
+          <%= render 'month_income' %>
+        </div>
+        <div class="tabbox">
+          <%= render 'year' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
