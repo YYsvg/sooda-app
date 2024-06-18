@@ -1,4 +1,5 @@
 class HomesController < ApplicationController
+  before_action :authenticate
   
   def index
     @income_categories = IncomeCategory.all

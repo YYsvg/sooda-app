@@ -1,5 +1,7 @@
 class WantsController < ApplicationController
+  before_action :authenticate
   before_action :set_want, only:[ :show, :edit, :update, :destroy ]
+
   def index
     @wants = Want.all
   end

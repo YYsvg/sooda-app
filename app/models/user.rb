@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :outcomes
   has_many :wants
 
+  validates :name, presence: true
+  validates :role, inclusion: {in: [true, false]}
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -30,4 +32,7 @@ class User < ApplicationRecord
     self.save!
   end
 
+  def admin?
+    role == true
+  end
 end

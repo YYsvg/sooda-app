@@ -1,5 +1,6 @@
 class IncomesController < ApplicationController
   before_action :set_income, only:[ :edit, :update, :destroy]
+  before_action :authenticate
   PER = 15
 
   def index

@@ -5,17 +5,17 @@ class Users::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   # def new
-  #   super
+    # super
   # end
 
   # POST /resource/sign_in
   # def create
-  #   super
+    # super
   # end
 
   # DELETE /resource/sign_out
   # def destroy
-  #   super
+    # super
   # end
 
   # protected

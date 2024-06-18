@@ -1,0 +1,13 @@
+ja:
+  devise:
+    sessions:
+      user:
+        signed_in: "ログインに成功しました。"
+      signed_out: "ログアウトしました。"
+    registrations:
+      user:
+        signed_up: "アカウントが作成されました。"
+        updated: "アカウント情報が更新されました。"
+    passwords:
+      user:
+        send_instructions: "パスワード再設定の案内をメールで送りました。"
