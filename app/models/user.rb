@@ -2,6 +2,9 @@ class User < ApplicationRecord
   has_many :incomes
   has_many :outcomes
   has_many :wants
+  has_many :income_categories
+  has_many :outcome_categories, dependent: :destroy
+  accepts_nested_attributes_for :outcome_categories
 
   validates :name, presence: true
   validates :role, inclusion: {in: [true, false]}

@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate
   before_action :set_user
+  before_action :user_outcome_categories, only: [:new, :edit, :update, :destroy]
+  before_action :user_income_categories, only:[:new, :edit, :update, :destroy]
 
   def mypage
     # 年、月の取得
@@ -60,9 +62,27 @@ class UsersController < ApplicationController
   end
 
   def calendar
-    @user = current_user
     @incomes = current_user.incomes
     @outcomes = current_user.outcomes
+  end
+
+  def new
+
+  end
+
+  def edit
+    @category_names = @user.outcome_categories.pluck(:id, :name)
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to homes_path, notice: '設定を更新しました。'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
   end
 
   private
@@ -75,4 +95,11 @@ class UsersController < ApplicationController
     params.permit(:name)
   end
 
+  def user_outcome_categories
+    params.permit(:id, :name, :image, :users_id)
+  end
+
+  def user_income_categories
+    params.permit(:id, :name, :image, :users_id)
+  end
 end

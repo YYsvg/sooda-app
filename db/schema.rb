@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_06_16_091336) do
+ActiveRecord::Schema.define(version: 2024_06_18_073429) do
 
   create_table "income_categories", force: :cascade do |t|
     t.string "name", null: false
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_income_categories_on_user_id"
   end
 
   create_table "incomes", force: :cascade do |t|
@@ -36,6 +38,8 @@ ActiveRecord::Schema.define(version: 2024_06_16_091336) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_outcome_categories_on_user_id"
   end
 
   create_table "outcomes", force: :cascade do |t|

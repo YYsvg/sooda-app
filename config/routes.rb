@@ -19,10 +19,12 @@ Rails.application.routes.draw do
   end
 
 
-  resource :users, only: [ :edit, :update ] do
+  resources :users, only: [ :edit, :update ] do
     collection do
       get 'mypage',     :to => 'users#mypage'
       get 'mypage/calendar',   :to => 'users#calendar'
+      get 'edit', :to => 'users#edit'
+      patch 'edit', :to => 'users#update'
     end
   end
 
