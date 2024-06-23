@@ -1,24 +1,40 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリの概要および想定ユーザー
+子供向けの「おこづかいちょう」アプリです。
+Webでもスマホでも、手軽に入力、管理できるように制作しました。
 
-Things you may want to cover:
+## なぜこのアプリを作成するのか
+お金の持ち方について考える
+必要経費、好きなこと、人のために使うお金と分けて予算を立てる感覚を身につける
+自分のお金の使い道や今後の目標を記録することで、好きなこと、興味あることを可視化する
+やりたいことを計画し、そのための予算と期日を決める
 
-* Ruby version
+以上について考えるきっかけになればと思い、作成しました。
 
-* System dependencies
 
-* Configuration
+## 使用技術
+* Ruby version  2.7.3
+* Rails version 5.2.4.2
+* 開発環境 sqlite3
+* 本番環境 mySQL2
 
-* Database creation
+## 機能一覧
+・アカウントの新規登録・ログインにdevise使用
+  - 管理者　・・・名前、メール、パスワードで登録済
+  - ユーザー・・・LINEのみ
 
-* Database initialization
+・ホーム画面　　・・・収入、支出の登録（金額、メモ、写真）
+・カレンダー画面・・・当月のカレンダー表示、収入・支出の一覧、編集、削除
+・レポート画面　・・・月ごと、年ごとの集計を表示
 
-* How to run the test suite
+・ユーザー名を編集可能
+・目標貯金金額を登録可能
+・管理者画面では登録ユーザー名と最終ログイン日時を表示
 
-* Services (job queues, cache servers, search engines, etc.)
+## 工夫したところ
+①スマホでも使用しやすいように、画面を構成
+②タブ切り替えで直感的に入力しやすいよう作成
+③配色にはベースをクリーム色、ボタンは青色、戻るボタンはピンク色をベースに作成
+④一つのUserモデルにUserと管理者を設定
 
-* Deployment instructions
-
-* ...
