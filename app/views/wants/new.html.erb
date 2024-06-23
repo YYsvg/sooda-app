@@ -1,24 +1,23 @@
-<div class="mx-auto" style="width: 900px;">
-  <% pagename = "これからやりたいことの入力画面" %>
-  <h1><%= pagename %></h1>
-  <div class="d-flex align-items-center justify-content-center">
-  <%= form_with model: @want, local: true do |f| %>
-  
-    <div>
-      <%= f.label :memo,"メモ" %>
-      <%= f.text_area :memo,  placeholder: "やりたいことを書こう！", size: "50x10"%>
-    </div>
+<div class="edit">
 
-    <div>
-      <%= f.label :image,"イメージ図" %>
-      <%= f.file_field :image %>
-    </div>
+<%= form_with model: @want, local: true do |f| %>
+  <div>
+    <%= f.label :memo, "これからやりたいこと(50文字以内)" %>
+    <%= f.text_area :memo, placeholder: "いつまでに？", size: "30x5" %>
+  </div><br>
+  <div>
+        <%= f.label :image do %>
+          <i class="fa-regular fa-image"></i>&nbsp;イメージ画像<br>
+          <%= f.file_field :image %>
+        <% end %><br>
+      </div><br>
+      <div>
+        <%= f.label :price, "予算金額 " %>
+        <%= f.number_field :price %>円
+      </div></br><br>
 
-    <div>
-      <%= f.label :price,"予算" %>
-      <%= f.number_field :price %>円
-    </div>
-
-    <div><%= f.submit "入力する", class:"submit-color back" %></div>
-  <% end %>
+      <div>
+        <%= f.submit "入力する", class:"submit-color edit-btn" %>
+      </div>
+    <% end %>
 </div>

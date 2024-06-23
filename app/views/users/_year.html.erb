@@ -30,7 +30,11 @@
       <div class="card-body"><br>
         <h3 class="card-title">残高</h3><br>
         <h4 class="card-text">
-          <%= @yearly_balance.to_s(:delimited) %>円
+          <%= @yearly_balance.to_s(:delimited) %>円<br><br><br>
+          <div class="goal">
+            <label>目標金額まで</label><br>
+            <%= @current_price.to_s(:delimited) %>円
+          </div>
         </h4>
       </div>
     </div>

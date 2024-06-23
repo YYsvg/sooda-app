@@ -1,36 +1,21 @@
-<div class="container mycard">
-  <div class="card-body col-sm-9">
+<div class="edit">
+    <% pagename = "マイページ" %>
+    <h1><%= pagename %></h1>
+    </br>
 
+    <%= form_with url: mypage_users_path, local: true, method: :put do |f| %>
+      <h3><label>なまえを変更できます</label></h3>
+      <%= f.text_field :name, placeholder: "入力してね", class:"home" %>
+      <p><%= "現在の名前：#{current_user.name}" %></p>
+      <br><br>
+      <h3><label>貯金もしよう</label></h3>
+      <%= f.label :goal_price, "目標金額：" %>
+      <%= f.number_field :goal_price %>円
+      <p><%= "現在の金額：#{current_user.goal_price}" %></p>
+      <br><br><br>
 
-  <% pagename = "なまえの編集" %>
-  <h1><%= pagename %></h1>
-
-  <%= form_with url: mypage_users_path, local: true, method: :put do |f| %>
-    <div class="box-name">
-      <h3><label>なまえを変更できます</label></h3><%= f.text_field :name, placeholder: "名前を入力", class:"home" %>
-      <p><%= "現在のなまえ：#{current_user.name}" %></p>
-    </div>
-
-<br><br>
-
-  <div>
-    <%= f.submit "保存", class:"link-btn name name-btn" %>
+      <%= f.submit "保存", class:"submit-color edit-btn" %>
+    <% end %>
   </div>
- <% end %>
-</div>
-</div>
 
-<%= form_with model: @user, local: true do |f| %>
-<ul>
-  <%= f.fields_for :outcome_categories do |ocf| %>
-      <% @category_names.each do |category| %>
-        <li>
-          <%= ocf.hidden_field :id, value: category.id %>
-          <%= ocf.text_field :name, value: category.name %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-
-  <%= f.submit "Update" %>
-<% end %>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_06_18_073429) do
+ActiveRecord::Schema.define(version: 2024_06_23_065419) do
 
   create_table "income_categories", force: :cascade do |t|
     t.string "name", null: false
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2024_06_18_073429) do
     t.string "name", null: false
     t.string "provider"
     t.string "uid"
-    t.integer "goal_price"
+    t.integer "goal_price", default: 0
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

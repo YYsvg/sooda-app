@@ -11,6 +11,7 @@ class WantsController < ApplicationController
 
   def new
     @want = current_user.wants.new
+    @wants = Want.all
   end
 
   def create
@@ -48,6 +49,6 @@ class WantsController < ApplicationController
     end
 
     def want_params
-      params.require(:want).permit(:memo, :image, :user_id)
+      params.require(:want).permit(:memo, :price, :image, :user_id)
     end
 end

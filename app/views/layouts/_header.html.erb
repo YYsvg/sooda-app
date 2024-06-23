@@ -8,12 +8,16 @@
         </h3>
       </div>
     <% end %>
-
+    <div class="col-sm-9 setting">
+        <%= link_to edit_user_path(current_user) do %>
+          <h3><i class="fa-regular fa-face-smile" style="color: #212529;"></i></h3>
+        <% end %>
+    </div>
     <div class="col-sm-9 setting">
       <%= link_to destroy_user_session_path, method: :delete do %>
-        <h3><i class="fa-solid fa-right-from-bracket" style="color: #212529;"></i>ログアウトはこちらから</h3>
+        <h3 class="setting"><i class="fa-solid fa-right-from-bracket" style="color: #212529;"></i>ログアウトはこちらから</h3>
       <% end %>
     </div>
   <% end %>
-  <br><br>
+<br><br>
 </header>

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  before_action :set_beginning_of_week
   def authenticate
     redirect_to new_user_session_url unless user_signed_in?
   end
@@ -25,4 +25,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :email, :role])
   end
 
+  private
+  def set_beginning_of_week
+    Date.beginning_of_week = :sunday
+  end
 end

@@ -1,6 +1,6 @@
 class OutcomesController < ApplicationController
   before_action :authenticate
-  before_action :set_outcome, only: %w( edit, update, destroy)
+  before_action :set_outcome, only: %w(edit update destroy)
 
   def index
     @outcomes = current_user.outcomes.all
@@ -30,7 +30,7 @@ class OutcomesController < ApplicationController
 
   def update
     if @outcome.update(outcome_params)
-      redirect_to outcomes_path, notice: "アップデート成功！"
+      redirect_to mypage_calendar_users_path, notice: "アップデート成功！"
     else
       render 'edit'
     end
@@ -38,7 +38,7 @@ class OutcomesController < ApplicationController
 
   def destroy
     if @outcome.destroy
-      redirect_to outcomes_path, notice: "削除しました"
+      redirect_to mypage_calendar_users_path, notice: "削除しました"
     else
       redirect_to outcomes_path, alert: "削除に失敗しました: #{@outcome.errors.full_messages.join(',')}"
     end

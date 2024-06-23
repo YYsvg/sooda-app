@@ -31,8 +31,7 @@ class IncomesController < ApplicationController
 
   def update
     if @income.update(income_params)
-      # indexページへリダイレクト
-      redirect_to incomes_path, notice: "修正しました"
+      redirect_to mypage_calendar_users_path, notice: "修正しました"
     else
       render 'edit'
     end
@@ -40,7 +39,7 @@ class IncomesController < ApplicationController
   
   def destroy
     if @income.destroy
-      redirect_to incomes_path, notice:"削除しました"
+      redirect_to mypage_calendar_users_path, notice:"削除しました"
     else
       redirect_to incomes_path, alert: "削除に失敗しました: #{@income.errors.full_messages.join(',')}"
     end

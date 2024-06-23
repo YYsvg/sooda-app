@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user
   before_action :user_outcome_categories, only: [:new, :edit, :update, :destroy]
   before_action :user_income_categories, only:[:new, :edit, :update, :destroy]
+  PER = 4
 
   def mypage
     # 年、月の取得
@@ -59,15 +60,18 @@ class UsersController < ApplicationController
     @yearly_incomes_total = @monthly_incomes.sum { |income| income[:total_incomes] }
     @yearly_outcomes_total = @monthly_outcomes.sum { |outcome| outcome[:total_outcomes] }
     @yearly_balance = @yearly_incomes_total - @yearly_outcomes_total
+  
+    #達成金額
+    @goal_price = @user.goal_price
+    @current_price = @yearly_balance - @goal_price
   end
 
   def calendar
-    @incomes = current_user.incomes
-    @outcomes = current_user.outcomes
+    @incomes = current_user.incomes.page(params[:page]).per(PER)
+    @outcomes = current_user.outcomes.page(params[:page]).per(PER)
   end
 
   def new
-
   end
 
   def edit
@@ -92,7 +96,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.permit(:name)
+    params.permit(:name, :goal_price)
   end
 
   def user_outcome_categories

@@ -16,14 +16,17 @@
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kiwi+Maru&family=RocknRoll+One&family=Zen+Kurenaido&family=Zen+Maru+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&family=Yusei+Magic&display=swap');
 @import 'bootstrap';
 @import 'font-awesome';
 @import 'simple_calendar';
 
 body {
   margin: 0;
+  width: 1200px;
   font-family: "Zen Maru Gothic", sans-serif;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: 400;
   line-height: 1.6;
   color: #212529;
@@ -190,13 +193,16 @@ body {
 .submit-color:hover,
 .link-btn:hover,
 .logout-color:hover,
-.admin-logout:hover{
+.admin-logout:hover
+{
   text-decoration: none;
-  color:rgba(152, 91, 91, 0.5)
+  color:rgba(152, 91, 91, 0.5);
 }
-.home-btn:hover{
+.home-btn:hover
+{
   text-decoration: none;
 }
+
 .home-btn {
     color: #212529;
 }
@@ -229,7 +235,6 @@ body {
   margin: auto;
 }
 
-
 // ===================
 // マイページ_月別、年別
 // ===================
@@ -243,13 +248,80 @@ body {
 }
 .category_list {
   list-style: none;
+  text-align: left;
+}
+ul {
+  padding-left: 20px;
+}
+.total-name {
+  font-size: 1.6rem;
+  padding-left: 30px;
+}
+.total-price {
+  font-size: 1.8rem;
+  width: 100px;
+  text-align: right;
 }
 
+.monthly-name {
+  text-align: left;
+  padding-left: 30px;
+}
+.monthly-price {
+  padding-left: 30px;
+  text-align: right;
+}
+.goal {
+  padding: 5px;
+  background: #FFFAB7;
+  // font-family: 'RocknRoll One', sans-serif;
+  font-family: 'Yusei Magic', sans-serif;
+}
 //　ユーザーログイン画面
 .home {
   font-size: larger;
   text-align: center;
 }
+// =======
+// カレンダー画面
+// =======
+.simple-calendar {
+  .day {
+    background: #fff;
+  }
+  .wday-0 {
+    background: #ffeaea;
+  }
+  .wday-6 {
+    background: #d4ebff;
+  }
+  .today {
+    background: #FFFAB7;
+  }
+  .prev-month,.next-month {
+    background: #fff;
+    color: #999;
+  }
+  width: 900px;
+  margin-left: 50px;
+}
+.pagination > li > a {
+  border: none;
+  color: #696969;
+}
+.pagination > .page-item.active .page-link {
+  background: #93c9ff;
+  border-radius: 50%;
+}
+.pagination > li > a:hover {
+  border-radius: 15px;
+}
+.page {
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+
 
 // 管理者ページ
 .admin {
@@ -275,10 +347,47 @@ body {
 .right {
   text-align: right;
 }
-.mycard {
-  width: 800px;
-}
+// .wrapper {
+  // width: 900px;
+  // margin-left: 50px;
+// }
 .setting {
   text-align: right;
   color: #212529;
+}
+.wrapper {
+  width: 900px;
+  margin-left: 50px;
+}
+.edit {
+  width: 600px;
+  margin-left: 300px;
+}
+.edit-btn{
+  margin-left: 100px;
+}
+.auto {
+  margin-left: 100px;
+  text-align: left;
+}
+
+.footer-btn {
+  display: flex;
+  text-align: center;
+  justify-content: left;
+  margin-left: 250px;
+}
+.footer-color
+{
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-style: none;
+  width: 30px;
+  padding: 15px;
+  margin-right: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #67C6E3;
+  border: 1px #67C6E3 solid;
 }
