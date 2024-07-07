@@ -22,9 +22,9 @@ class OutcomesController < ApplicationController
   def create
     @outcome = current_user.outcomes.new(outcome_params)
     if @outcome.save
-      redirect_to homes_path, notice: "登録完了！"
+      redirect_to homes_path, notice: "登録完了！☆＾∇゜)"
     else
-      render "new"
+      redirect_to homes_path, notice: "登録に失敗しました／カテゴリ・金額・メモは必ず入力してください。"
     end
   end
 

@@ -23,9 +23,9 @@ class IncomesController < ApplicationController
   def create
     @income = current_user.incomes.new(income_params)
     if @income.save
-      redirect_to homes_path, notice: "登録完了！"
+      redirect_to homes_path, notice: "登録完了！☆＾∇゜)"
     else
-      render "new"
+      redirect_to homes_path, notice: "登録に失敗しました(｡•︿•｡)　カテゴリ・金額・メモは必ず入力してください"
     end
   end
 

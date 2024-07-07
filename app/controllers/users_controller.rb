@@ -82,6 +82,8 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to homes_path, notice: '設定を更新しました。'
     else
+      flash[:notice] = '変更したい内容を入力してください'
+      @user.reload
       render :edit
     end
   end
