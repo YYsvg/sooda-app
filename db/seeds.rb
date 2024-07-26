@@ -13,14 +13,16 @@ User.create!(
   role: false
 )
 
+IncomeCategory.create!(user_id:2, name: "おしごと")
 IncomeCategory.create!(user_id:2, name: "おこづかい")
-IncomeCategory.create!(user_id:2, name: "おてつだい")
 IncomeCategory.create!(user_id:2, name: "お年玉")
+IncomeCategory.create!(user_id:2, name: "給料")
+IncomeCategory.create!(user_id:2, name: "その他")
 
 
-OutcomeCategory.create!(user_id:2, name: "食費")
-OutcomeCategory.create!(user_id:2, name: "文房具")
-OutcomeCategory.create!(user_id:2, name: "書籍")
+OutcomeCategory.create!(user_id:2, name: "趣味")
 OutcomeCategory.create!(user_id:2, name: "交際費")
-OutcomeCategory.create!(user_id:2, name: "おでかけ")
-OutcomeCategory.create!(user_id:2, name: "衣服")
+OutcomeCategory.create!(user_id:2, name: "食費")
+OutcomeCategory.create!(user_id:2, name: "書籍")
+OutcomeCategory.create!(user_id:2, name: "文房具")
+OutcomeCategory.create!(user_id:2, name: "交通費")
